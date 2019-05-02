@@ -1,0 +1,19 @@
+<!--   users new html erb -->
+
+<h1>Sign up</h1>
+
+<form action="<%= users_url %>" method="POST">
+    <%= auth_token %>
+
+<label for="email">Email</label>
+    <input type="text" name="user[email]" 
+           id="email" value="<%= @user.email %>">
+
+<br/> 
+    <label for="password">Password</label>
+    <input type="password" name="user[password]" 
+           id="password" value="">
+<br />
+
+    <input type="submit" value="Create User">
+</form>

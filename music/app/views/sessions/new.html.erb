@@ -1,0 +1,17 @@
+<!-- session new html erb -->
+
+
+<form action=" <%= session_url %>" method="POST">
+    <%= auth_token %>
+<br />
+
+<label for="email">Email: </label>
+<input type="text" name="user[email" id="email" value="">
+
+<br />
+
+<label for="user_password">Password: </label>
+<input type="password" name="user[password]" id="user_password" value="">
+
+<input type="submit" value="Log In">
+</form>

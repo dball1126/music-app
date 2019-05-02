@@ -1,0 +1,37 @@
+<form action="<%= albums_url %>" method="POST">
+    <%= auth_token %>
+
+<label for="album_title">Title</label>
+    <input type="text" name="album[title]" id="album_title" value="<%= @album.title%>">
+
+<label for="album_year">Year</label>
+    <input type="text" name="album[year]" id="album_year" value="<%= @album.year%>">
+
+<label for="album_studio_type">Album Type</label>
+    <select name="album[band_id]" id="album_studio_type">
+        <% Band.all.each do |band| %>
+        <option value="<%= band.id %>">
+            <%= band.name %>
+        </option>
+        <% end %>
+        </select>
+    <br />
+
+    <% Album.all.each do |album| %>
+<label>
+    <input type="radio" name="Album.all[studio]" value="true"
+    <%= "checked" if album.studio == true %>>
+    <%= true if album.studio == true %>
+    <%= false if album.studio == false %>
+</label>
+
+<label>
+    <input type="radio" name="Album.all[studio]" value="false"
+    <%= "checked" if album.studio == false %>>
+    <%= true if album.studio == true %>
+    <%= false if album.studio == false %>
+</label>
+    <% end %>
+<br >
+<input type="submit" value="CLICK HERE">
+</form>
